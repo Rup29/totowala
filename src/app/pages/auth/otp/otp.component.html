@@ -1,0 +1,24 @@
+<ion-content [fullscreen]="true">
+  <div class="authwapper">
+    <div class="authcontent">
+      <div class="logo">
+        <img src="assets/images/otp.png" alt="Otp"/>
+      </div>
+      <h1>OTP
+        Verification</h1>
+        <p class="sendotptxt">Code has been send to <span>+9542****42</span></p>
+        <form [formGroup]="otpForm" (ngSubmit)="onOtp()">
+          <div class="formGroup flx">
+            <input type="password" placeholder="" #otp1  formControlName="firstopt" maxlength="1" (keyup)="move($event, '', otp1, otp2)" />
+            <input type="password" placeholder="" #otp2  formControlName="secendotp" maxlength="1"   (keyup)="move($event, otp1, otp2, otp3)" />
+            <input type="password" placeholder="" #otp3  formControlName="therdotp" maxlength="1"   (keyup)="move($event, otp2, otp3, otp4)"/>
+            <input type="password" placeholder="" #otp4  formControlName="foreotp" maxlength="1"   (keyup)="move($event, otp3, otp4, '')"/>
+            </div>
+             <button [disabled]="otpForm.invalid" type="submit" class="themeBtn matBtn ">Submit</button>
+        </form>
+       
+        
+        <p class="logtxt"><span (click)="resendOtp()">Resend code in </span><a *ngIf="timecount">{{timecount}} s</a></p>
+    </div>
+  </div>
+</ion-content>

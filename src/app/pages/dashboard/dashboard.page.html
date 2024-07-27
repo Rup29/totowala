@@ -1,0 +1,200 @@
+<ion-header [translucent]="true">
+ <div class="top-bar">
+  <div class="col-4">
+    <ion-button class="menuBtn">
+      <ion-menu-button>
+        <img src="assets/images/menubutton.png"/>
+      </ion-menu-button>
+    </ion-button>
+  </div>
+  <div class="col-4">
+    <h2 class="status">Online</h2>
+    </div>
+  <div class="col-4">
+    <div class="user">
+      <div class="statusTogle" >
+        <label for="switch" [class.statusDriver] = "status" (click)="statusTgl()"></label>
+      </div>
+     
+    </div>
+  </div>
+
+ </div>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ <div class="statusMsg" [class.online] = "status">
+  <div class="icon">
+    <span><ion-icon [name]="status? 'sunny':'moon'"></ion-icon></span>
+  </div>
+  <div class="txt">
+    <p>You are offline !</p>
+    <p>Go online to accept order</p>
+  </div>
+
+ </div>
+ <div class="maps">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14755.47142655817!2d87.72169051221445!3d22.396338513114515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02bb18802ef8c7%3A0xeedec38ae919ff21!2sPanskura%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1714242476480!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+ </div>
+ 
+<div class="btmStcky">
+  <div class="paynow" *ngIf="complete">
+    <div class="userinfo">
+  
+      <div class="earnInfo">
+        <b>₹110</b> <span class="km">0KM</span> <span class="km timerclock"><ion-icon name="time-outline"></ion-icon> 0:00M</span> 
+      
+      </div>
+  </div>
+  <div class="paymood">
+    <p><span (click)="onlinePay()"><label [class.active] = "payOnline == true" ></label>Online</span></p>
+    <p><span (click)="offlinePay()"><label [class.active] = "payOfline == true" ></label>Cash</span></p>
+  </div>
+  <div class="sucessNote">
+    <img src="assets/images/applause.png"/>
+    <p>Congratulation you have successfully complete this ride </p>
+  </div>
+  <button type="button" class="themeBtn matBtn" (click)="confirmOtpssss()">Complete Ride</button>
+  </div>
+<div class="otpsec" *ngIf="OtpV">
+    <div class="userinfo">
+      <div class="userbox">
+        <div class="usericon">
+          <img src="assets/images/user.png"/>
+        </div>
+        <div class="userdtls">
+           <label>Sumit Das</label>
+        </div>
+      </div>
+      <div class="earnInfo">
+        <b>₹110</b> <span class="km">10.5KM</span> <span class="km timerclock"><ion-icon name="time-outline"></ion-icon> 10:25 M</span> 
+      
+      </div>
+  </div>
+    <div class="rideinfodtls">
+      <span class="formdtns"><ion-icon name="ellipse"></ion-icon>Panskura banamali collage 54HH B478</span>
+      <span  class="todtns"><ion-icon name="ellipse"></ion-icon>Ghatal central bus stand 54BH21</span>
+    </div>
+    <p class="otpSuess"><img src="assets/images/social-media.png"/> OTP Verification is successfully done</p>
+    <button type="button" class="themeBtn matBtn" (click)="confirmOtpss()">Let's Go !</button>
+   </div> 
+<div class="otpsec" *ngIf="pickOtps">
+     <div class="userinfo">
+       <div class="userbox">
+         <div class="usericon">
+           <img src="assets/images/user.png"/>
+         </div>
+         <div class="userdtls">
+            <label>Sumit Das</label>
+         </div>
+       </div>
+       <div class="earnInfo">
+         <b>₹110</b> <span class="km">10.5KM</span>
+       
+       </div>
+   </div>
+     <div class="rideinfodtls">
+       <span class="formdtns"><ion-icon name="ellipse"></ion-icon>Panskura banamali collage 54HH B478</span>
+       <span  class="todtns"><ion-icon name="ellipse"></ion-icon>Ghatal central bus stand 54BH21</span>
+     </div>
+     <div class="otpSubmit">
+       <form>
+         <input type="number" placeholder="0"/>
+         <input type="number" placeholder="0"/>
+         <input type="number" placeholder="0"/>
+         <input type="number" placeholder="0"/>
+       </form>
+     </div>
+     <button type="button" class="themeBtn matBtn" (click)="confirmOtps()">Submit</button>
+    </div> 
+
+
+   <div class="poikup"  *ngIf="poikups">
+     <div class="userinfo"  >
+       <div class="userbox">
+         <div class="usericon">
+           <img src="assets/images/user.png"/>
+         </div>
+         <div class="userdtls">
+            <label>Sumit Das</label>
+         </div>
+       </div>
+       <div class="earnInfo">
+         <b>₹110</b> <span class="km">10.5KM</span>
+         <a href="tel:9051169410" class="call"><ion-icon name="call"></ion-icon></a>
+       </div>
+   </div>
+   <div class="notePkup">
+      <p>Please try to pickup with in 10 min we will arrange booking after 10 min</p>
+   </div>
+   <div class="timer">
+     <cd-timer [countdown]="true" [startTime]="60*5" format="intelli"></cd-timer>
+   </div>
+   <button type="button" class="themeBtn matBtn" (click)="pickOtp()">Next</button>
+   </div>
+ 
+
+
+   <div class="userdasboard riderinfo" *ngIf="contneeOrder">
+     <div class="userinfo">
+       <div class="userbox">
+         <div class="usericon">
+           <img src="assets/images/user.png"/>
+         </div>
+         <div class="userdtls">
+            <label>Sumit Das</label>
+         </div>
+       </div>
+       <div class="earnInfo">
+         <b>₹110</b> <span class="km">10.5KM</span>
+         <a href="tel:9051169410" class="call"><ion-icon name="call"></ion-icon></a>
+       </div>
+   </div>
+   <div class="rideinfodtls">
+     <span class="formdtns"><ion-icon name="ellipse"></ion-icon>Panskura banamali collage 54HH B478</span>
+     <span  class="todtns"><ion-icon name="ellipse"></ion-icon>Ghatal central bus stand 54BH21</span>
+   </div>
+   <button type="button" class="themeBtn matBtn" (click)="rideContinew()">Continue</button>
+     </div>
+
+
+   <div class="userdasboard" *ngIf="contneeOrders">
+     <div class="userinfo">
+       <div class="userbox">
+         <div class="usericon">
+           <img src="assets/images/user.png"/>
+         </div>
+         <div class="userdtls">
+            <label>Sumit Das</label>
+            <span>Basic Lavel</span>
+         </div>
+       </div>
+       <div class="earnInfo">
+         <b>₹ 1400.0</b>
+       </div>
+   </div>
+   <div class="dashboardinfo">
+     <ul>
+       <li>
+         <ion-icon name="time-outline"></ion-icon>
+         <b>10.2</b>
+         <span>Hours Online</span>
+       </li>
+       <li>
+         <ion-icon name="speedometer-outline"></ion-icon>
+         <b>30 KM</b>
+         <span>Total Distance</span>
+       </li>
+       <li>
+         <ion-icon name="cash-outline"></ion-icon>
+         <b>₹ 500</b>
+         <span>Today Earn</span>
+       </li>
+     </ul>
+   </div>
+   </div> 
+
+</div>
+ 
+
+</ion-content>

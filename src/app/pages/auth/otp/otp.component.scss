@@ -1,0 +1,103 @@
+.authcontent {
+    padding: 20px 40px;
+    width: 100%;
+    h1{
+        font-size: 35px;
+        color: #000;
+        margin: 0px;
+        width: 230px;
+        max-width: 100%;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+    p.sendotptxt{
+        margin: 0px;
+        color: #888888;
+        font-size: 16px;
+        margin-bottom: 35px;
+        span{
+            font-weight: 500;
+            display: inline-block;
+            color: #F6D330;
+        }
+    }
+    form{
+        .formGroup{
+            position: relative;
+            padding-bottom: 25px;
+     
+        }
+        input{
+            height: 50px;
+            width: calc(100% - 76px);
+            border-radius: 8px;
+            outline: none !important;
+            background: transparent;
+            border: transparent;
+            padding: 10px 15px;
+            font-size: 35px;
+            color: #000;
+            font-weight: 600;
+         
+        }
+    }
+  
+}
+.themeBtn{
+    height: 50px;
+    width: 100%;
+    color: #000;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 30px;
+    outline: none;
+    background: rgb(246,211,48);
+    outline: none !important;
+    background: linear-gradient(90deg, rgba(246,211,48,1) 0%, rgba(254,187,27,1) 100%);
+    transition: 0.3s;
+}
+
+.logtxt{
+    font-size: 13px;
+    color: #888;
+    text-align: center;
+    margin-top: 20px;
+    a{
+        display: inline-block;
+        color: #F6D330;
+        font-weight: 500;
+    }
+}
+.logo{
+    text-align: center;
+    margin-bottom: 20px;
+    img{
+        max-width: 100%;
+    }
+
+}
+.authwapper{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flx{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    input{
+        width: 22% !important;
+        border: 1px solid #D9D9D9 !important;
+        text-align: center !important;
+    }
+}
+.flx input:focus{
+    background: rgb(246 211 48 / 14%) !important;
+    border: 1px solid rgb(246 211 48 / 50%) !important;
+}

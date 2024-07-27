@@ -1,0 +1,38 @@
+<ion-content [fullscreen]="true">
+  <div class="authwapper">
+    <div class="authcontent">
+      <div class="logo">
+        <img src="assets/images/login.png" alt="login"/>
+      </div>
+      <h1>Login to your 
+        account</h1>
+        <form [formGroup]="loginform" (ngSubmit)="login()">
+          <div class="formGroup">
+            <div class="innerform" id="inpfocus" #inp>
+              <div class="flag">
+                <img src="assets/images/flag.png"/>
+              </div> <span>+91</span>
+              <input type="number" placeholder="Enter Mobile Number"  formControlName="phoneNumber"/>
+            </div>
+            <span class="errMsg" *ngIf="loginform.get('phoneNumber')?.hasError('required') && loginform.get('phoneNumber')?.touched">*Please Enter a mobile number</span>
+            <span class="errMsg" *ngIf="loginform.get('phoneNumber')?.hasError('pattern')">*Please Enter a valid mobile number</span>
+            </div>
+             <button type="submit" class="themeBtn matBtn " [disabled]="loginform.invalid">Login</button>
+        </form>
+        <p class="logaltrnt"><span>or continue with</span></p>
+        <ul>
+          <li>
+            <a  class="matBtn">
+              <img src="assets/images/facebook.png"/>
+            </a>
+          </li>
+          <li>
+            <a  class="matBtn">
+              <img src="assets/images/google.png"/>
+            </a>
+          </li>
+        </ul>
+        <p class="logtxt">Don't have an  account ? <a routerLink="/register">Sign Up</a></p>
+    </div>
+  </div>
+</ion-content>

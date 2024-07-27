@@ -1,0 +1,28 @@
+<ion-modal trigger="open-modal"   [isOpen]="isOrder">
+  <ng-template>
+    <ion-content >
+      <div class="order">
+        <div class="order-top">
+          <h1>New Order</h1>
+          <span>#54875222</span>
+          <div class="timerOrder">
+               <div class="progress-bar" style="background: radial-gradient(closest-side, #FFC107 87%, transparent 80% 100%), conic-gradient(#33cb39 {{intervalTime}}%, rgb(255 255 255 / 7%) 0);">
+                 <span>{{30 - revarsCount}}<small>s</small>
+                 <b>To accept</b>
+                 </span>
+               </div>
+          </div>
+        </div>
+         
+         <div class="orderAction">
+          <a (click)="cancelOrder()">
+          <span class="cancel matBtn"><ion-icon name="close-outline"></ion-icon></span>
+        <label>Cancel</label></a>
+        <a (click)="acceptOrder()">
+          <span class="accept matBtn"><ion-icon name="checkmark-done-outline"></ion-icon></span>
+        <label>Accept</label></a>
+         </div>
+      </div>
+    </ion-content>
+  </ng-template>
+</ion-modal>

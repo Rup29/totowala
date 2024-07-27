@@ -1,0 +1,44 @@
+<ion-content [fullscreen]="true">
+  <div class="authwapper">
+    <div class="authcontent">
+      <div class="logo">
+        <img src="assets/images/register.png" alt="login"/>
+      </div>
+      <h1>Create  your 
+        account</h1>
+        <form [formGroup]="register" (ngSubmit)="onRegister()">
+          <div class="formGroup">
+            <ion-icon name="mail"></ion-icon>
+            <input type="text" placeholder="Enter Email Id"  formControlName="email" class="borderinp" />
+            <span class="errMsg" *ngIf="register.get('email')?.hasError('required') && register.get('email')?.touched">*Please Enter a Email Id</span>
+            <span class="errMsg" *ngIf="register.get('email')?.hasError('pattern')">*Please Enter a valid Email Id</span>
+          </div>
+          <div class="formGroup">
+            <div class="innerform" id="inpfocus" #inp>
+              <div class="flag">               
+                <img src="assets/images/flag.png"/>
+              </div> <span>+91</span>
+              <input type="number" placeholder="Enter Mobile Number"  formControlName="phoneNumber" maxlength="10" minlength="10"/>
+            </div>
+            <span class="errMsg" *ngIf="register.get('phoneNumber')?.hasError('required') && register.get('phoneNumber')?.touched">*Please Enter a Mobile Number</span>
+            <span class="errMsg" *ngIf="register.get('phoneNumber')?.hasError('pattern')">*Please Enter a valid Mobile Number</span>
+            </div>
+             <button type="submit" class="themeBtn matBtn " [disabled]="register.invalid">Sign Up</button>
+        </form>
+        <p class="logaltrnt"><span>or continue with</span></p>
+        <ul>
+          <li>
+            <a  class="matBtn">
+              <img src="assets/images/facebook.png"/>
+            </a>
+          </li>
+          <li>
+            <a  class="matBtn">
+              <img src="assets/images/google.png"/>
+            </a>
+          </li>
+        </ul>
+        <p class="logtxt">Already  have an  account ?  <a routerLink="/">Login</a></p>
+    </div>
+  </div>
+</ion-content>

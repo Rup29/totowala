@@ -35,3 +35,118 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: "Open Sans", sans-serif !important;
+}
+html{
+    font-family: "Open Sans", sans-serif !important;
+}
+a{
+    text-decoration: none;
+}
+.matBtn {
+    position: relative;
+    overflow: hidden;
+    transition: background 400ms;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+  }
+  
+  span.ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 600ms linear;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  
+  @keyframes ripple {
+    to {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+  input:focus{
+    background: rgb(246 211 48 / 14%) !important;
+    border: 1px solid rgb(246 211 48 / 50%) !important;
+}
+[disabled]{
+  opacity: 0.5;
+}
+.errMsg{
+  position: absolute;
+    font-size: 13px;
+    color: #e32719;
+    bottom: 4px;
+    left: 0px;
+}
+.sucessModal .alert-title{
+  width:128px;
+  height: 128px;
+  background-image: url('./assets/images/checke.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.sucessModal .alert-sub-title{
+ font-size: 25px;
+ color: #000;
+ font-weight: 600;
+ margin: 15px 0px;
+ text-align: center;
+}
+.sucessModal .alert-message{
+ font-size: 13px;
+ color: #333;
+ line-height: 22px;
+}
+.sucessModal .alert-button{
+ min-width: auto;
+ height: auto;
+ padding: 8px 25px;
+ border-radius: 20px;
+ background: rgb(246,211,48);
+ outline: none !important;
+ background: linear-gradient(90deg, rgba(246,211,48,1) 0%, rgba(254,187,27,1) 100%);
+ transition: 0.3s;
+ color: #000;
+ font-weight: 500;
+ border-top:0px ;
+ flex: none;
+}
+.sucessModal .alert-button-group{
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+.sucessModal .alert-wrapper{
+  border-radius: 30px !important;
+  text-align: center;
+}
+.sucessModal .alert-wrapper.sc-ion-alert-md{
+  border-radius: 30px !important;
+  text-align: center;
+}
+.themeBtn{
+  height: 50px;
+  width: 100%;
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-radius: 30px;
+  outline: none;
+  background: rgb(246,211,48);
+  outline: none !important;
+  background: linear-gradient(90deg, rgba(246,211,48,1) 0%, rgba(254,187,27,1) 100%);
+  transition: 0.3s;
+}
+ion-button{
+  --box-shadow: none;
+}

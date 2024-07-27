@@ -1,3 +1,65 @@
-<ion-app>
-  <ion-router-outlet></ion-router-outlet>
-</ion-app>
+<ion-menu side="start" contentId="main-content" type="push" >
+  <ion-content>
+    <div class="slideMenu">
+      <div class="menu-top">
+        <ion-menu-toggle><a><ion-icon name="arrow-back-outline"></ion-icon></a></ion-menu-toggle>
+        <div class="userslideInfo">
+          <div class="dtls">
+            <label>Sumit Jana</label>
+            <span>Basic Lavel</span>
+          </div>
+          <div class="avtrImg">
+            <img src="assets/images/user.png"/>
+          </div>
+        </div>
+      </div>
+    
+      <div class="menu">
+        <img src="assets/images/sidelogo.png"/>
+        <ul>
+          <li>
+            <ion-menu-toggle>   <ion-icon name="home-outline"></ion-icon> Home</ion-menu-toggle>
+         
+          </li>
+          <li>
+            <ion-menu-toggle><ion-icon name="person-outline"></ion-icon> My Account </ion-menu-toggle>
+            
+          </li>
+          <li>
+            <ion-menu-toggle>
+              <ion-icon name="newspaper-outline"></ion-icon> History
+            </ion-menu-toggle>
+        
+          </li>
+          <li>
+            <ion-menu-toggle>
+              <ion-icon name="notifications-outline"></ion-icon> Notification
+            </ion-menu-toggle>
+    
+          </li>
+          <li routerLink="/payment">
+            <ion-menu-toggle>
+              <ion-icon name="wallet-outline"></ion-icon> Payment<span>New</span>
+              </ion-menu-toggle>
+           
+          </li>
+          <li>
+            <ion-menu-toggle>
+            <ion-icon name="umbrella-outline"></ion-icon> Help
+            </ion-menu-toggle>
+          </li>
+        </ul>
+      </div>
+      <div class="menuBtm">
+        <ion-menu-toggle> <a (click)="logOut()"><ion-icon name="power-outline"></ion-icon></a></ion-menu-toggle>
+       
+        <span><small>ToToWala</small> &copy; 2024</span>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+ <ion-router-outlet></ion-router-outlet>
+ <app-order></app-order>
+</div>
